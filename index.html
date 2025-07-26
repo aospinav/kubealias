@@ -2,11 +2,11 @@
 
 tmux unbind C-b
 tmux set -g prefix F1
-tmux bin F1 send-prefix
+tmux bind F1 send-prefix
 
-tmux bin-key -n F2 next-window
-tmux bin-key -n F4 copy-mode
-tmux bin-key -n F5 paste-buffer
+tmux bind-key -n F2 next-window
+tmux bind-key -n F4 copy-mode
+tmux bind-key -n F5 paste-buffer -p
 
 alias kgall='kubectl get all'
 
@@ -19,4 +19,4 @@ alias kctx='kubectl use-context '
 
 do='--dry-run=client -o yaml'
 
-source <(kubeclt completion bash)
+source <(kubectl completion bash)
