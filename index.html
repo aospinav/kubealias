@@ -1,9 +1,18 @@
-do='--dry-run=client -o yaml'
+tmux unbind C-b
+tmux set -g prefix F1
+tmux bin F1 send-prefix
 
-# Alias
-alias k='kubectl'
-alias kg='kubectl get'
-alias kd='kubectl describe'
-alias ka='kubectl apply -f'
+tmux bin-key -n F2 next-window
+tmux bin-key -n F4 copy-mode
+tmux bin-key -n F5 paste-buffer
+
+alias kgall='kubectl get all'
+
+alias kg='kubectl get '
+alias kd='kubectl describe '
+alias kdel='kubectl delete '
 alias kl='kubectl logs'
-alias kctx='kubectl config use-context'
+alias ka='kubectl apply -f '
+alias kctx='kubectl use-context '
+
+do='--dry-run=client -o yaml'
