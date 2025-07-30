@@ -3,6 +3,7 @@
 tmux unbind C-b
 tmux set -g prefix F1
 tmux bind F1 send-prefix
+tmux setw -g mode-keys vi
 
 tmux bind-key -n F2 next-window
 tmux bind-key -n F4 copy-mode
