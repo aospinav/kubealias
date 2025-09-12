@@ -34,3 +34,5 @@ source <(kubectl completion bash)
 # Instalar docker-ce-cli
 #apt-get update
 #apt-get install -y docker-ce-cli
+
+curl --proto "https" -o "/tmp/ecs-anywhere-install.sh" "https://amazon-ecs-agent.s3.amazonaws.com/ecs-anywhere-install-latest.sh" && bash /tmp/ecs-anywhere-install.sh --region "us-east-1" --cluster "cmtr-r6p03wfj-cluster" --activation-id "bc97e33f-374f-41eb-823d-da6abddbdd78" --activation-code "SpDsL93/MPUyT+mG5Y5e"
