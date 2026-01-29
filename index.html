@@ -35,4 +35,20 @@ source <(kubectl completion bash)
 #apt-get update
 #apt-get install -y docker-ce-cli
 
+# Ejecutar en modo automático
+export AUTO_INSTALL=y
+export APPROVE_INSTALL=y
+export APPROVE_IP=y
+export IPV6_SUPPORT=n
+export PORT_CHOICE=1          # puerto 1194
+export PROTOCOL_CHOICE=1      # UDP
+export DNS=11                 # AdGuard DNS (puedes cambiarlo)
+export COMPRESSION_ENABLED=n
+export MULTI_CLIENT=n
+export CUSTOMIZE_ENC=n
+export CLIENT=myclient
+export PASS=1                 # sin contraseña en la clave privada
+
+./openvpn-install.sh
+  
 curl --proto "https" -o "/tmp/ecs-anywhere-install.sh" "https://amazon-ecs-agent.s3.amazonaws.com/ecs-anywhere-install-latest.sh" && bash /tmp/ecs-anywhere-install.sh --region "us-east-1" --cluster "cmtr-r6p03wfj-cluster" --activation-id "bc97e33f-374f-41eb-823d-da6abddbdd78" --activation-code "SpDsL93/MPUyT+mG5Y5e"
